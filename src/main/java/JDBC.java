@@ -11,11 +11,10 @@ public class JDBC {
                     + "CREATE TABLE test (\n"
                     + "id bigserial primary key,\n"
                     + "number integer NOT NULL);"
-                    );
+            );
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
     }
 
     public static void addNumbers(Connection connection) {
@@ -30,16 +29,11 @@ public class JDBC {
                 System.out.println(i + " сейчас " + capacity);
                 preparedStatement.setInt(1, i);
                 preparedStatement.executeUpdate();
-
             }
-
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
-
-
     }
 }
 
