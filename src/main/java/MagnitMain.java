@@ -1,14 +1,10 @@
 import jdbc.JDBC;
-import org.jdom2.JDOMException;
-import org.xml.sax.SAXException;
-import xml.XML;
+import xml.XmlCreateClass;
+import xml.XmlParseClass;
+import xml.XmlTransformClass;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.Scanner;
 
 public class MagnitMain {
@@ -21,14 +17,19 @@ public class MagnitMain {
             System.out.println("Пиши значение");
             Scanner scanner = new Scanner(System.in);
             int capacity = scanner.nextInt();
-            JDBC.newDB(connection);
-            JDBC.addNumbers(connection,capacity);
-            XML.xmlCreator(connection,capacity);
-            XML.xmlTTransformer();
-            XML.xmlParser();
+
+            JDBC.newDB(connection, capacity);
+
+            XmlCreateClass.xmlCreator(connection,capacity);
+
+            XmlTransformClass.xmlTTransformer();
+            //посмотреть через простой Jackson XML mapper todo
+            XmlParseClass.xmlParser();
 
 
-        } catch (SQLException | TransformerException | ParserConfigurationException | IOException | SAXException | JDOMException throwables) {
+
+
+        } catch (Exception throwables) {
             throwables.printStackTrace();
         }
     }
