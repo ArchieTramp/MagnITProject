@@ -1,6 +1,11 @@
 import jdbc.JDBC;
+import org.jdom2.JDOMException;
+import org.xml.sax.SAXException;
 import xml.XML;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -19,9 +24,11 @@ public class MagnitMain {
             JDBC.newDB(connection);
             JDBC.addNumbers(connection,capacity);
             XML.xmlCreator(connection,capacity);
+            XML.xmlTTransformer();
+            XML.xmlParser();
 
 
-        } catch (SQLException throwables) {
+        } catch (SQLException | TransformerException | ParserConfigurationException | IOException | SAXException | JDOMException throwables) {
             throwables.printStackTrace();
         }
     }

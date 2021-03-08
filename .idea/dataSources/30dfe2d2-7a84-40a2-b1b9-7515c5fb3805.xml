@@ -790,9 +790,9 @@ false Zulu
       <ObjectId>13442</ObjectId>
       <Comment>default administrative connection database</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>730</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1196496</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|41212|41214|1
+      <Relations>sequence|table|41658|41660|1
 </Relations>
     </database>
     <role id="3" parent="1" name="pg_execute_server_program">
@@ -863,7 +863,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>731</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1196497</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="17" parent="2" name="adminpack">
@@ -972,35 +972,35 @@ UC/10
       <Type>index</Type>
     </access-method>
     <sequence id="30" parent="16" name="test_id_seq">
-      <ObjectId>41212</ObjectId>
+      <ObjectId>41658</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>729</StateNumber>
+      <StateNumber>1196483</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
     <table id="31" parent="16" name="test">
-      <ObjectId>41214</ObjectId>
+      <ObjectId>41660</ObjectId>
       <Outdated>1</Outdated>
       <Owner>postgres</Owner>
-      <StateNumber>729</StateNumber>
+      <StateNumber>1196483</StateNumber>
     </table>
     <column id="32" parent="31" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>729</StateNumber>
+      <StateNumber>1196483</StateNumber>
       <DefaultExpression>nextval(&apos;test_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
-    <column id="33" parent="31" name="number">
+    <column id="33" parent="31" name="field">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>729</StateNumber>
+      <StateNumber>1196483</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="34" parent="31" name="test_pkey">
-      <ObjectId>41218</ObjectId>
-      <StateNumber>729</StateNumber>
+      <ObjectId>41664</ObjectId>
+      <StateNumber>1196483</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1009,8 +1009,8 @@ UC/10
       <ClassIds>3124</ClassIds>
     </index>
     <key id="35" parent="31" name="test_pkey">
-      <ObjectId>41219</ObjectId>
-      <StateNumber>729</StateNumber>
+      <ObjectId>41665</ObjectId>
+      <StateNumber>1196483</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>test_pkey</UnderlyingIndexName>

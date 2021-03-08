@@ -14,7 +14,7 @@ public class JDBC {
                     + "\n"
                     + "CREATE TABLE test (\n"
                     + "id bigserial primary key,\n"
-                    + "number integer NOT NULL);"
+                    + "field integer NOT NULL);"
             );
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -26,7 +26,7 @@ public class JDBC {
     public static void addNumbers(Connection connection, int capacity) {
                 try {
                     PreparedStatement preparedStatement = connection.prepareStatement(
-                            "INSERT INTO test(number) VALUES (?)");
+                            "INSERT INTO test(field) VALUES (?)");
                     for (int i = 1; i <= capacity; i++) {
                         preparedStatement.setInt(1, i);
                         preparedStatement.executeUpdate();
