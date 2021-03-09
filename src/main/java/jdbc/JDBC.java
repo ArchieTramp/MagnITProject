@@ -5,6 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Класс для описания, создания и добавления N элементов в БД
+ */
+
+
 public class JDBC {
 
     public static void newDB(Connection connection, int capacity) {
@@ -27,7 +32,6 @@ public class JDBC {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
     }
 }
 

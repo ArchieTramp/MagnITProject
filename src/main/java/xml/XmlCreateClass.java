@@ -19,8 +19,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Класс описывающий создание 1.xml
+ */
+
 public class XmlCreateClass {
     public static void xmlCreator(Connection connection, int capacity) {
+
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder;
 
@@ -28,11 +33,8 @@ public class XmlCreateClass {
 
             dbf.setNamespaceAware(true);
             documentBuilder = dbf.newDocumentBuilder();
-
             Document doc = documentBuilder.newDocument();
-
             Element root = doc.createElementNS("", "entries");
-
             doc.appendChild(root);
 
             PreparedStatement preparedStatement = connection.prepareStatement(
@@ -48,13 +50,9 @@ public class XmlCreateClass {
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
-
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-
             DOMSource source = new DOMSource(doc);
-
             StreamResult file = new StreamResult(new File("src/1.xml"));
-
             transformer.transform(source, file);
 
 

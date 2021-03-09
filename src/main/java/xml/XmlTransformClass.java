@@ -8,6 +8,10 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 
+/**
+ * Класс описывает трансформацию 1.xml в 2.xml с использованием transformer.xsl
+ */
+
 public class XmlTransformClass {
 
     public static void xmlTTransformer() throws TransformerException {

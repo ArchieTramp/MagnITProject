@@ -7,6 +7,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Scanner;
 
+/**
+ * @author Artur Gilyazov
+ */
+
 public class MagnitMain {
     public static void main(String[] args) {
         try (Connection connection = DriverManager.getConnection(
@@ -14,19 +18,17 @@ public class MagnitMain {
                 "postgres",
                 "20612")) {
 
-            System.out.println("Пиши значение");
+            System.out.println("Сколько элементов добавить в базу?");
             Scanner scanner = new Scanner(System.in);
             int capacity = scanner.nextInt();
 
             JDBC.newDB(connection, capacity);
 
-            XmlCreateClass.xmlCreator(connection,capacity);
+            XmlCreateClass.xmlCreator(connection, capacity);
 
             XmlTransformClass.xmlTTransformer();
-            //посмотреть через простой Jackson XML mapper todo
+
             XmlParseClass.xmlParser();
-
-
 
 
         } catch (Exception throwables) {
